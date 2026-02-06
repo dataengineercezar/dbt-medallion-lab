@@ -1,0 +1,47 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data loaded via dbt seed"
+    database: awsdatacatalog
+    schema: medallion_db
+    tables:
+      - name: raw_customers
+        description: "Raw customer data"
+        columns:
+          - name: customer_id
+            description: "Primary key"
+            tests:
+              - unique
+              - not_null
+      - name: raw_products
+        description: "Raw product catalog"
+        columns:
+          - name: product_id
+            description: "Primary key"
+            tests:
+              - unique
+              - not_null
+      - name: raw_orders
+        description: "Raw order transactions"
+        columns:
+          - name: order_id
+            description: "Primary key"
+            tests:
+              - unique
+              - not_null
+          - name: customer_id
+            description: "FK to customers"
+            tests:
+              - not_null
+              - relationships:
+                  to: source('raw', 'raw_customers')
+                  field: customer_id
+      - name: raw_order_items
+        description: "Raw order line items"
+        columns:
+          - name: item_id
+            description: "Primary key"
+            tests:
+              - unique
+              - not_null

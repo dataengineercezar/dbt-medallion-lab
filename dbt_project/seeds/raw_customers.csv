@@ -1,0 +1,11 @@
+customer_id,customer_name,email,city,state,created_at
+1,Maria Silva,maria@email.com,Sao Paulo,SP,2025-01-15
+2,Joao Santos,joao@email.com,Rio de Janeiro,RJ,2025-02-20
+3,Ana Costa,ana@email.com,Belo Horizonte,MG,2025-03-10
+4,Carlos Souza,carlos@email.com,Curitiba,PR,2025-04-05
+5,Fernanda Lima,fernanda@email.com,Salvador,BA,2025-05-18
+6,Pedro Alves,pedro@email.com,Manaus,AM,2025-06-22
+7,Julia Mendes,julia@email.com,Brasilia,DF,2025-07-30
+8,Ricardo Dias,ricardo@email.com,Porto Alegre,RS,2025-08-14
+9,Camila Rocha,camila@email.com,Recife,PE,2025-09-01
+10,Bruno Ferreira,bruno@email.com,Fortaleza,CE,2025-10-10
