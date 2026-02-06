@@ -1,0 +1,13 @@
+medallion_lab:
+  target: dev
+  outputs:
+    dev:
+      type: athena
+      s3_staging_dir: "s3://athena-results-732592767587/"
+      s3_data_dir: "s3://iceberg-lakehouse-lab-732592767587/dbt_warehouse/"
+      region_name: us-east-1
+      database: awsdatacatalog
+      schema: medallion_db
+      threads: 4
+      table_type: iceberg
+      work_group: primary

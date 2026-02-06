@@ -1,0 +1,27 @@
+name: 'medallion_lab'
+version: '1.0.0'
+
+profile: 'medallion_lab'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  medallion_lab:
+    bronze:
+      +materialized: view
+      +tags: ['bronze']
+    silver:
+      +materialized: table
+      +tags: ['silver']
+    gold:
+      +materialized: table
+      +tags: ['gold']
