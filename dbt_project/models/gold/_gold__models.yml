@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: gold__revenue_per_month
+    description: "Monthly revenue metrics with order counts and avg ticket"
+    columns:
+      - name: order_year
+        data_tests:
+          - not_null
+      - name: order_month
+        data_tests:
+          - not_null
+      - name: gross_revenue
+        data_tests:
+          - not_null
+
+  - name: gold__customer_lifetime_value
+    description: "Customer LTV with segmentation and value tiers"
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+      - name: value_tier
+        data_tests:
+          - accepted_values:
+              values: ['platinum', 'gold', 'silver', 'bronze']
+
+  - name: gold__top_products
+    description: "Product performance ranking by revenue and quantity"
+    columns:
+      - name: product_id
+        data_tests:
+          - unique
+          - not_null
+      - name: revenue_rank
+        data_tests:
+          - not_null
+
+  - name: gold__customer_summary
+    description: "Customer 360 view with order history and spend"
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null

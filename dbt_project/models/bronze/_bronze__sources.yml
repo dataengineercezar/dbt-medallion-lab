@@ -11,7 +11,7 @@ sources:
         columns:
           - name: customer_id
             description: "Primary key"
-            tests:
+            data_tests:
               - unique
               - not_null
       - name: raw_products
@@ -19,7 +19,7 @@ sources:
         columns:
           - name: product_id
             description: "Primary key"
-            tests:
+            data_tests:
               - unique
               - not_null
       - name: raw_orders
@@ -27,12 +27,12 @@ sources:
         columns:
           - name: order_id
             description: "Primary key"
-            tests:
+            data_tests:
               - unique
               - not_null
           - name: customer_id
             description: "FK to customers"
-            tests:
+            data_tests:
               - not_null
               - relationships:
                   to: source('raw', 'raw_customers')
@@ -42,6 +42,6 @@ sources:
         columns:
           - name: item_id
             description: "Primary key"
-            tests:
+            data_tests:
               - unique
               - not_null
